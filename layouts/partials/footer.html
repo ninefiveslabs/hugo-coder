@@ -1,7 +1,7 @@
 <footer class="footer">
   <section class="container">
     {{ with .Site.Params.footercontent | safeHTML }}
-      <p>{{.}}</p>
+      {{.}} ·
     {{ end }}
     {{ if not .Site.Params.hideCopyright }}
       {{ with .Site.Params.since }}
