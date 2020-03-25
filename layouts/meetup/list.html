@@ -21,8 +21,8 @@
     {{ $total := len $pages }}
     {{ range $index, $element := $pages }}
       <tr>
-        <td>{{ sub $total $index }}</td>
-        <td>{{ .Date.Format "2006-01-02 15:04:05" }}</td>
+        <td>{{ printf "%02d" (sub $total $index) }}</td>
+        <td>{{ .Date.Format "2006-01-02 15:04" }}</td>
         <td>{{ .Title }}</td>
         <td>
         {{ with  $element.OutputFormats.Get "Calendar" -}}
