@@ -28,7 +28,8 @@ UID:{{dateFormat "20060102T150405" .Date }}-meetup@ninefiveslabs.io
 DTSTART;TZID=Europe/Warsaw:{{dateFormat "20060102T150405" .Date }}
 DTEND;TZID=Europe/Warsaw:{{dateFormat "20060102T150405" .Date }}
 SUMMARY:Nine Fives Labs Meetup: {{ .Title }}
-URL:https%3A%2F%2Fmeet.jit.si%2FNineFivesLabsDevOpsDinner
-DESCRIPTION:{{ replace (.Content | plainify) "\n" "\\n" }}\nURL: https%3A%2F%2Fmeet.jit.si%2FNineFivesLabsDevOpsDinner
+URL:https://meet.jit.si/NineFivesLabsDevOpsDinner
+LOCATION:https://meet.jit.si/NineFivesLabsDevOpsDinner
+DESCRIPTION:{{ replace (htmlUnescape (plainify .Content)) "\n" "\\n" }}\nURL: https://meet.jit.si/NineFivesLabsDevOpsDinner
 END:VEVENT
 END:VCALENDAR
