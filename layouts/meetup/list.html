@@ -3,7 +3,7 @@
   <section class="container list">
   <h1>{{ .Title }}</h1>
   {{ with .OutputFormats.Get "Calendar" -}}
-  <p>Kalendarz: <a class="link" href="{{ .RelPermalink }}">.ics</a> | Konferencja <a href="https://meet.jit.si">Jitsi</a>: <a href="{{ $.Params.jitsi_link }}">{{ $.Params.jitsi_link }}</a></p>
+  <p>Kalendarz: <a class="link" href="{{ .RelPermalink }}"><strong>.ics</strong></a> | Konferencja <a href="https://meet.jit.si">Jitsi</a>: <a href="{{ $.Params.jitsi_link }}"><strong>{{ slicestr (urls.Parse $.Params.jitsi_link).Path 1 }}</strong></a></p>
   {{- end }}
   {{ .Content }}
   <!-- list all talks; list non-future slides; else list things that are not future and not slides -->
@@ -29,9 +29,9 @@
         <a class="link" href="{{ .RelPermalink }}">.ics</a>
         {{- end }} / <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Nine+Fives+Labs+Meetup:+{{ .Title | htmlEscape }}&dates={{ .Date.Format "20060102T150405" }}/{{ dateFormat "20060102T150405" (add .Date.Unix 1800) }}&location={{ $.Params.jitsi_link }}&details={{ .Content | plainify | htmlEscape }}" target="_blank">gcal</a>
         </td>
-        <td>{{- if .Params.record }}
+        <td>{{- if .Params.slides }}
         <a class="link" href="{{ .Params.slides }}">
-        {{- if in .Params.record "docs.google.com" -}}
+        {{- if in .Params.slides "docs.google.com" -}}
         gslides
         {{- else -}}
         slides
