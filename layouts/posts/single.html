@@ -20,6 +20,12 @@
               <i class="fas fa-clock"></i>
               {{ i18n "reading_time" .ReadingTime }}
             </span>
+            {{ if .Page.Params.Authors }}
+            <span class="authors">
+              <i class="fas fa-feather"></i>
+               {{ delimit .Page.Params.Authors "," }}
+            </span>
+            {{ end }} 
           </div>
           {{ with .Page.Params.Categories }}{{ partial "taxonomy/categories.html" . }}{{ end }}
           {{ with .Page.Params.Tags }}{{ partial "taxonomy/tags.html" . }}{{ end }}

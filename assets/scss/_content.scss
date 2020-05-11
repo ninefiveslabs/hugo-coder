@@ -36,7 +36,12 @@
     .post-title {
       margin-bottom: .75em;
     }
+    header {
+      border-bottom: 1px solid $alt-bg-color;
+      padding-bottom: .75em;
+    }
     .post-meta {
+      font-size: .85em;
       i {
         text-align: center;
         width: 1.6rem;
