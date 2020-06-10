@@ -214,3 +214,17 @@ figure {
 .footer {
   font-size: 1.2rem;
 }
+
+figure.inline {
+  //display: inline-block;
+  float: left;
+  clear: both;
+  padding-right: 10px !important;
+  +p {
+    display: block;
+    overflow: auto;
+    margin-left: 10px;
+  }
+}
+
+
