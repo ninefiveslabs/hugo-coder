@@ -27,7 +27,7 @@
         <td>
         {{ with  $element.OutputFormats.Get "Calendar" -}}
         <a class="link" href="{{ .RelPermalink }}">.ics</a>
-        {{- end }} / <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Nine+Fives+Labs+Meetup:+{{ .Title | htmlEscape }}&dates={{ .Date.Format "20060102T150405" }}/{{ dateFormat "20060102T150405" (add .Date.Unix 1800) }}&location={{ $.Params.jitsi_link }}&details={{ .Content | plainify | htmlEscape }}" target="_blank">gcal</a>
+        {{- end }} / <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Nine+Fives+Labs+Meetup:+{{ .Title | htmlEscape }}&dates={{ .Date.Format "20060102T150405" }}/{{ dateFormat "20060102T150405" (add .Date.Unix 5400) }}&location={{ $.Params.jitsi_link }}&details={{ .Content | plainify | htmlEscape }}" target="_blank">gcal</a>
         </td>
         <td>{{- if .Params.slides }}
         <a class="link" href="{{ .Params.slides }}">
